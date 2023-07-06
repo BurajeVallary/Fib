@@ -1,3 +1,4 @@
+import android.os.Build.VERSION_CODES.R
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -5,6 +6,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import dev.`val`.recyclerviews.R
 import dev.`val`.recyclerviews.databinding.ActivityMainBinding
+
+private val Int.layout: Any
+    get() {}
 
 class NamesRvAdapter (var namesList:List<String>): RecyclerView.Adapter<NamesViewHolder>(){
 
@@ -14,6 +18,7 @@ class NamesRvAdapter (var namesList:List<String>): RecyclerView.Adapter<NamesVie
         val itemView= LayoutInflater.from(parent.context).inflate(R.layout.name_list_item,parent,false)
         return NamesViewHolder(itemView)
     }
+
 
     override fun onBindViewHolder(holder: NamesViewHolder, position: Int) {
         val currentName=namesList.get(position)
@@ -45,5 +50,7 @@ class NamesRvAdapter (var namesList:List<String>): RecyclerView.Adapter<NamesVie
 }
 
 class NamesViewHolder(itemView:View): RecyclerView.ViewHolder(itemView){
-    var tvName=itemView.findViewById<TextView>(R.id.tvName)
+    var tvName=itemView.findViewById<TextView>(R.i.tvName)
 }
+
+
